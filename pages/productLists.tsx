@@ -22,6 +22,11 @@ const ProductLists: React.FC<Props> = ({ products }) => {
     return <div>No products available</div>;
   }
   const listItems = products.map((p) => <Product product={p} key={p.id} />);
-  return <div>{listItems}</div>;
+  return (
+    <main>
+      <h1>Produkte</h1>
+      <div className="flex-row-wrap">{listItems}</div>)
+    </main>
+  );
 };
 export default ProductLists;
