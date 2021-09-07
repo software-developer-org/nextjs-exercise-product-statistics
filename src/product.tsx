@@ -24,8 +24,8 @@ const Product: React.FC<Props> = ({ product }) => {
       </header>
       <section>
         <div className="subtitle">{product.brand}</div>
-        {price}
-        <div>Größe(n): {sizes}</div>
+        <b>Preis:</b>{price}
+        <div><b>Größe(n):</b> {sizes}</div>
       </section>
     </article>
   );
