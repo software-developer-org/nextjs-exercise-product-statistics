@@ -1,9 +1,10 @@
-import { Box, Container, FormControlLabel, Switch } from '@material-ui/core';
+import { Box, FormControlLabel, Switch } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import { GetStaticProps } from 'next';
 import React, { useState } from 'react';
 import { getProducts, ProductType } from '../lib/products';
+import Layout from '../src/layout';
 import Product from '../src/product';
 
 type Props = {
@@ -34,7 +35,6 @@ const ProductLists: React.FC<Props> = ({ allProducts }) => {
   const initialProducts: ProductType[] = sizeFilter ? allProducts.filter((p) => p.sizes.filter((productSize) => productSize === sizeFilter).length > 0) : allProducts;
   const [products, setProducts] = useState(initialProducts);
 
-
   const listItems = sort(products).map((p) => <Product product={p} key={p.id} />);
 
   const handleFilterBySize = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -50,16 +50,18 @@ const ProductLists: React.FC<Props> = ({ allProducts }) => {
   };
 
   return (
-    <Container maxWidth="lg">
+    <Layout>
       <Typography variant="h4" component="h1" gutterBottom>
-        Next.js example
+        Products
       </Typography>
-      <TextField label="Größe" helperText="Nach Größe Filtern" type="text" value={sizeFilter} onChange={handleFilterBySize}></TextField>
-      <FormControlLabel control={<Switch checked={priceAsc} onChange={handleSort}></Switch>} label={priceAsc ? 'Preise aufsteigend' : 'Preis absteigend'}></FormControlLabel>
+
+      <TextField label="Size" helperText="Filter by Size" type="text" value={sizeFilter} onChange={handleFilterBySize}></TextField>
+      <FormControlLabel control={<Switch checked={priceAsc} onChange={handleSort}></Switch>} label={priceAsc ? 'Price ascending' : 'Price descending'}></FormControlLabel>
+
       <Box display="flex" flexDirection="row" flexWrap="wrap">
         {listItems}
       </Box>
-    </Container>
+    </Layout>
   );
 };
 export default ProductLists;
