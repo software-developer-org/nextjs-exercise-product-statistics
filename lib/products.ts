@@ -10,14 +10,15 @@ export type ProductType = {
 };
 
 export async function getProducts(size?: string): Promise<ProductType[]> {
-  const headers = { 'Content-Type': 'application/json' };
+  const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' };
 
   const productsReponse = await fetch('https://s3-eu-west-1.amazonaws.com/fid-recruiting/fid-task-4-ffront-products.json', {
     method: 'GET',
+    mode: 'no-cors',
     headers,
   });
 
-  const products = await productsReponse.json() as ProductType[];
+  const products = (await productsReponse.json()) as ProductType[];
   if (size) {
     return products.filter((p) => p.sizes.filter((productSize) => productSize === size).length > 0);
   }
