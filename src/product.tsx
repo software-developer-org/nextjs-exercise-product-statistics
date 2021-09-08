@@ -1,6 +1,8 @@
+import { ImageList, ImageListItem, Paper, Typography } from '@material-ui/core';
 import * as React from 'react';
 import { ProductType } from '../lib/products';
 import styles from './product.module.scss';
+
 
 type Props = {
   product: ProductType;
@@ -15,19 +17,31 @@ const Product: React.FC<Props> = ({ product }) => {
     <div>{product.priceO} € </div>
   );
   const sizes = product.sizes.reduce((total, current) => total + ',' + current);
+
   return (
-    <article className={styles.card}>
-      <header className="title">
-        <a href={product.url} target="_blank" rel="noopener noreferrer">
+    <a href={product.url}>
+      <Paper className={styles.card} elevation={6}>
+        <Typography component="h1" gutterBottom>
           {product.description}
-        </a>
-      </header>
-      <section>
-        <div className="subtitle">{product.brand}</div>
-        <b>Preis:</b>{price}
-        <div><b>Größe(n):</b> {sizes}</div>
-      </section>
-    </article>
+        </Typography>
+        <ImageList>
+          {product.images.map((url, index) => (
+            <ImageListItem key={index}>
+              <img src={url} alt={url} />
+            </ImageListItem>
+          ))}
+        </ImageList>
+        <Typography component="h2" color="textSecondary">
+          {product.brand}
+        </Typography>
+        <Typography component="label">{price}</Typography>
+        <Typography component="label">
+          <small>
+            <b>Größe(n):</b> {sizes}
+          </small>
+        </Typography>
+      </Paper>
+    </a>
   );
 };
 export default Product;
