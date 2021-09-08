@@ -1,8 +1,10 @@
-import { getProducts, ProductType } from '../lib/products';
-('../lib/products');
+import { Box, Container } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 import { GetStaticProps } from 'next';
 import * as React from 'react';
+import { getProducts, ProductType } from '../lib/products';
 import Product from '../src/product';
+('../lib/products');
 
 type Props = {
   products: ProductType[];
@@ -23,10 +25,12 @@ const ProductLists: React.FC<Props> = ({ products }) => {
   }
   const listItems = products.map((p) => <Product product={p} key={p.id} />);
   return (
-    <main>
-      <h1>Produkte</h1>
-      <div className="flex-row-wrap">{listItems}</div>)
-    </main>
+    <Container maxWidth="lg">
+        <Typography variant="h4" component="h1" gutterBottom>
+          Next.js example
+        </Typography>
+      <Box display="flex" flexDirection="row" flexWrap="wrap">{listItems}</Box>)
+    </Container>
   );
 };
 export default ProductLists;
