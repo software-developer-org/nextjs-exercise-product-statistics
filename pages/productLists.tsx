@@ -52,7 +52,7 @@ const ProductLists: React.FC<Props> = ({ allProducts }) => {
   return (
     <Layout>
       <Typography variant="h4" component="h1" gutterBottom>
-        Products
+        {products.length} Products
       </Typography>
 
       <TextField label="Size" helperText="Filter by Size" type="text" value={sizeFilter} onChange={handleFilterBySize}></TextField>
