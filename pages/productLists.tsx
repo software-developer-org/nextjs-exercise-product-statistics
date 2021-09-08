@@ -29,7 +29,7 @@ const ProductLists: React.FC<Props> = ({ products }) => {
         <Typography variant="h4" component="h1" gutterBottom>
           Next.js example
         </Typography>
-      <Box display="flex" flexDirection="row" flexWrap="wrap">{listItems}</Box>)
+      <Box display="flex" flexDirection="row" flexWrap="wrap">{listItems}</Box>
     </Container>
   );
 };
