@@ -11,7 +11,7 @@ const Layout: NextPage = ({ children }) => {
     <div>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <title>Fashin Digital - Frontend Exercise</title>
+        <title>FashionDigital - Frontend Exercise</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container maxWidth="lg">
