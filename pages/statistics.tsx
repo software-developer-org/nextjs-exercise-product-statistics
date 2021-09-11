@@ -24,7 +24,7 @@ const Statistics: React.FC<Props> = ({ allProducts }) => {
   const lowestAveragePriceForSize = getLowestAveragePriceForSize(allProducts, '32');
   return (
     <Layout>
-      <Typography variant="h4" component="h1" gutterBottom>
+      <Typography variant="h2" component="h1" gutterBottom>
         Statistics
       </Typography>
       <Typography variant="h4" component="h1" gutterBottom>
@@ -47,30 +47,30 @@ const Statistics: React.FC<Props> = ({ allProducts }) => {
       </ul>
       <Typography variant="h4" component="h1" gutterBottom>
         Brand with largest size selection:
-        <ul>
-          {largestSelectionBySize.map((sizesByBrand) => {
-            return (
-              <li key={sizesByBrand.brand}>
-                {sizesByBrand.brand}: {sizesByBrand.sizes.length} sizes
-                <br />
-                {sizesByBrand.sizes.reduce((total, current) => total + ', ' + current)}
-              </li>
-            );
-          })}
-        </ul>
       </Typography>
+      <ul>
+        {largestSelectionBySize.map((sizesByBrand) => {
+          return (
+            <li key={sizesByBrand.brand}>
+              {sizesByBrand.brand}: {sizesByBrand.sizes.length} sizes
+              <br />
+              {sizesByBrand.sizes.reduce((total, current) => total + ', ' + current)}
+            </li>
+          );
+        })}
+      </ul>
       <Typography variant="h4" component="h1" gutterBottom>
         Brand with lowest average price for customers wearing size “32”:
-        <ul>
-          {lowestAveragePriceForSize.map((p) => {
-            return (
-              <li key={p.brand}>
-                {p.brand}: {p.averagePrice} €
-              </li>
-            );
-          })}
-        </ul>
       </Typography>
+      <ul>
+        {lowestAveragePriceForSize.map((p) => {
+          return (
+            <li key={p.brand}>
+              {p.brand}: {p.averagePrice} €
+            </li>
+          );
+        })}
+      </ul>
     </Layout>
   );
 };
