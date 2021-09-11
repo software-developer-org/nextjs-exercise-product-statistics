@@ -15,6 +15,10 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+# Product data
+
+Assumption: all attributes - except reduced price - for ear product are provided. In case original and reduced priced exists the statistics uses reduced prices.
+
 # Unit Tests
 
 ```
