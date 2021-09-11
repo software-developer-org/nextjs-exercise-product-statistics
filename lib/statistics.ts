@@ -3,8 +3,9 @@ import { ProductType } from "./products";
 export function getMostProductsByBrandsLessThan40(products: ProductType[]) {
     const lessThan40Eur = products.filter((p) => {
       const price = p.priceR ? p.priceR : p.priceO;
-      return price <= 40;
+      return price < 40;
     });
+
     const brands = lessThan40Eur.map((p) => p.brand).filter((brand, index, self) => self.indexOf(brand) === index);
     const productsByBrandsLessThan40 = brands.map((brand) => {
       return {
