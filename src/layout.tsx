@@ -3,8 +3,6 @@ import Typography from '@material-ui/core/Typography';
 import { NextPage } from 'next';
 import Head from 'next/head';
 
-const name = "Tai 'Mr. T' Truong";
-
 const Layout: NextPage = ({ children }) => {
   return (
     <div>
