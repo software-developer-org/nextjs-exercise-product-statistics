@@ -2,8 +2,8 @@ import { Typography } from '@material-ui/core';
 import { GetStaticProps } from 'next';
 import React from 'react';
 import { getProducts, ProductType } from '../lib/products';
+import { getLargestSelectionBySize, getLowestAveragePriceForSize, getMostProductsByBrandsLessThan40 } from '../lib/statistics';
 import Layout from '../src/layout';
-import {getLargestSelectionBySize, getLowestAveragePriceForSize, getMostProductsByBrandsLessThan40} from '../lib/statistics'
 
 type Props = {
   allProducts: ProductType[];
