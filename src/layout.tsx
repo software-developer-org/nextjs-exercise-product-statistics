@@ -4,7 +4,6 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 
 const name = "Tai 'Mr. T' Truong";
-export const siteTitle = 'Next.js Sample Website';
 
 const Layout: NextPage = ({ children }) => {
   return (
