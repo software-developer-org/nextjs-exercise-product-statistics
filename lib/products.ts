@@ -9,6 +9,9 @@ export type ProductType = {
   sizes: string[];
 };
 
+/**
+ * Fetch products from AWS
+ */
 export async function getProducts(): Promise<ProductType[]> {
   const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' };
 
