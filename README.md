@@ -1,3 +1,11 @@
+# About
+
+Tec stack:
+- [Next.js](https://nextjs.org/)
+- [Material-UI](https://material-ui.com/)
+
+Important: there are unit tests for each business logic in __tests__ folder:
+- statistics.ts tests getLargestSelectionBySize(), getLowestAveragePriceForSize(), and getMostProductsByBrandsLessThan40()
 
 # Getting Started
 
