@@ -9,7 +9,6 @@ const Layout: NextPage = ({ children }) => {
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <title>FashionDigital - Frontend Exercise</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container maxWidth="lg">
         <Box display="flex" flexDirection="colum" flexWrap="wrap" style={{ gap: 50 }} justifyContent="center">
